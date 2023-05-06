@@ -1,7 +1,7 @@
 REPORT
 As requested is this my short report on the Superpy project. 
-modules used:
 
+modules used:
 
 -Pandas
 This was a mandatory module to use. At first it was challenging for me to see why i needed this, but i have to admit it was pretty useful once understood.
