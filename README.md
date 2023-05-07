@@ -45,18 +45,18 @@ date-today
 	input: python super.py date-today
 	output: Date is set to (yyyy-mm-dd (today))
 
-register-buy
+buy
 	register bought products. Enter productname, price and expiration date.
 	The product will be added to the csv file with bought items. The bought date is automatically set to the set date by user (see show-date).
 
-	input: python super.py register-buy --n orange --p 0.23 --e 2023-05-10
+	input: python super.py buy --n orange --p 0.23 --e 2023-05-10
 	output: orange is added to bought items
 
-register-sale
+sale
 	register sold products. Enter productname and price.
 	The product will be added to the csv file with sold items. The sell date is automatically set to the set date by user (see show-date).
 
-	input: python super.py register-sale --n orange --p 0.23
+	input: python super.py sale --n orange --p 0.23
 	output: orange is added to sold items
 
 show-inventory
