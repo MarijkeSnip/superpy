@@ -34,6 +34,11 @@ show-date
 	input: python super.py show-date
 	output: Date is currently set to (yyyy-mm-dd)
 	
+date-today
+	The date is set to today.
+
+	input: python super.py date-today
+	output: Date is set to (yyyy-mm-dd (today))
 
 advance-date
 	The system date will be changed by the number of days entered compared to the set system date (example: 2023-05-05).
@@ -46,12 +51,6 @@ set-date
 
 	input: python syper.py set-date --d 2023-05-05
 	output: Date is set to 2023-05-05
-
-date-today
-	The date is set to today.
-
-	input: python super.py date-today
-	output: Date is set to (yyyy-mm-dd (today))
 
 buy
 	register bought products. Enter productname, price and expiration date.
