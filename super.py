@@ -1,6 +1,6 @@
 import argparse
 import datetime
-from date import print_date, change_date, set_today #, print_date, set_current_date
+from date import print_date, advance_days, set_today, change_date #, print_date, set_current_date
 from purchase import register_purchase
 from sales import sell_product
 from inventory import show_inventory, export_inventory
@@ -21,9 +21,11 @@ subparser = parser.add_subparsers(dest="command", required=True)
 #Date - Add parsers and arguments
 show_date = subparser.add_parser("show-date", help="prints set system date")
 date_today = subparser.add_parser("date-today", help="Set system date to today, format YYYY/MM/DD")
-set_date = subparser.add_parser("set-date", help="Offset the system date by a number of days from today")
+advance_date = subparser.add_parser("advance-date", help="Offset the system date by a number of days from system date")
+set_date = subparser.add_parser("set-date", help="Set system date to given date, format YYYY/MM/DD")
 
-set_date.add_argument("--d", "--days", type=int, help="Enter --d number of days")
+advance_date.add_argument("--d", "--days", type=int, help="Enter --d number of days", required=True)
+set_date.add_argument("--d","--date", type=lambda s: datetime.datetime.strptime(s, '%Y-%m-%d').date(), metavar="", help = "Enter --d date: Format YYYY-MM-DD", required=True) 
 
 #Purchases - Add parsers and arguments
 purchase = subparser.add_parser("buy", help="Register purchases, buy date is set system date")
@@ -74,11 +76,14 @@ args = parser.parse_args()
 if args.command == "show-date":
     show_date.set_defaults(function=print_date())
 
-if args.command == "set-date":
-    set_date.set_defaults(function=change_date(args.d))
+if args.command == "advance-date":
+    advance_date.set_defaults(function=advance_days(args.d))
 
 if args.command == "date-today":
     date_today.set_defaults(function=set_today())
+
+if args.command == "set-date":
+    set_date.set_defaults(function=change_date(args.d))
 
 #Purchase commands
 if args.command == "buy":
