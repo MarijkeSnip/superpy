@@ -27,18 +27,26 @@ Via the command python super.py -h you can see all options with the help informa
 
 Examples per function:
 
-set-date
-	The system date will be changed by the number of days entered compared to today (example: 2023-05-05).
-
-	input: python syper.py set-date –d -2
-	output: Date is set to 2023-05-03	
 
 show-date
-	The set date is displayed.
+	The set systemdate is displayed.
 
 	input: python super.py show-date
 	output: Date is currently set to (yyyy-mm-dd)
 	
+
+advance-date
+	The system date will be changed by the number of days entered compared to the set system date (example: 2023-05-05).
+
+	input: python syper.py advance-date --d -2
+	output: Date is set to 2023-05-03
+	
+set-date
+	The system date will be changed to the given date (example: 2023-05-05).
+
+	input: python syper.py set-date --d 2023-05-05
+	output: Date is set to 2023-05-05
+
 date-today
 	The date is set to today.
 
@@ -62,10 +70,10 @@ sale
 show-inventory
 	shows the inventory on given date (default = today)
 	
-	input: python super.py show inventory –d
+	input: python super.py show inventory –-d
 	output: inventory for today
 
-	input: python super.py show inventory –d 2023-05-04
+	input: python super.py show inventory –-d 2023-05-04
 	output: inventory for 2023-05-04
 
 revenue-total
@@ -74,7 +82,7 @@ revenue-total
 	input: python super.py revenue-total --d1 2023-04-01 --d2 2023-05-04
 	output: The total revenue from 2023-04-01 till 2023-05-04 is {total}
 
-	input: python super.py revenue-total –d1 2023-05-01 –d2
+	input: python super.py revenue-total –-d1 2023-05-01 –-d2
 	output: The total revenue from 2023-04-01 till {today} is {total}
 
 revenue-visual
@@ -83,14 +91,14 @@ revenue-visual
 	input: python super.py revenue-total --d1 2023-04-01 --d2 2023-05-04
 	output: line chart with revenue per month
 
-	input: python super.py revenue-total –d1 2023-05-01 –d2
+	input: python super.py revenue-total -–d1 2023-05-01 –-d2
 	output: line chart with revenue per month
 
 profit-total
 	shows the profit from date1 up till date2 (date 2 default = today).
 
-	input: python super.py profit-total –d1 2023-04-01 –d2 
+	input: python super.py profit-total –-d1 2023-04-01 –-d2 
 	output: The total profit from 2023-04-01 till {today} is {total}
 
-	input: python super.py profit-total –d1 2023-04-01 –d2 2023-05-31
+	input: python super.py profit-total –-d1 2023-04-01 –-d2 2023-05-31
 	output: The total profit from 2023-04-01 till 2023-05-31 is {total}
