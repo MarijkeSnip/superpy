@@ -43,7 +43,7 @@ date-today
 advance-date
 	The system date will be changed by the number of days entered compared to the set system date (example: 2023-05-05).
 
-	input: python syper.py advance-date --d -2
+	input: python super.py advance-date --d -2
 	output: Date is set to 2023-05-03
 	
 set-date
